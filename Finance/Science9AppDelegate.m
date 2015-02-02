@@ -29,8 +29,8 @@ static NSString * const kClientID =
     [GPPDeepLink setDelegate:self];
     [GPPDeepLink readDeepLinkAfterInstall];
     
-    [Parse setApplicationId:@"JZBd7VGfhUOhZGQK6u7kbuWF4jCPi0EX9y0p6rGY"
-                  clientKey:@"842XDuFJJqfJ6g3p1pVZdLT53EK7knfK1NawAr5d"];
+    [Parse setApplicationId:@"sgiEFAevbGxfgeeCJi1pMHHbUvhhLVHWHx0elYzW"
+                  clientKey:@"OkzsUopYZvhp1StwDW1o1ZkatNGCNij3W1tdn2Ph"];
     //Parse app ID for use with Finance DB
     
     [TestFlight takeOff:@"efe5a23b-bbc3-4dc9-bcdd-d81544af3d33"];
