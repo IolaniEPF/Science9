@@ -470,15 +470,12 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8y-65-yhO">
                                 <rect key="frame" x="20" y="440" width="500" height="77"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="77" id="Wyt-Js-IIG"/>
-                                </constraints>
                                 <string key="text">You're almost ready to go! Check to make sure you're happy with the profile you've created. Remember, you won't be able to change your avatar name after this point.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fp-jx-g9f">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fp-jx-g9f">
                                 <rect key="frame" x="232" y="525" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="Yey-4N-uKc"/>
@@ -499,18 +496,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.52156862749999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="2Fp-jx-g9f" firstAttribute="top" secondItem="m8y-65-yhO" secondAttribute="bottom" constant="8" symbolic="YES" id="951-4G-zDB"/>
                             <constraint firstAttribute="trailing" secondItem="jcj-Bs-Lce" secondAttribute="trailing" constant="20" symbolic="YES" id="GGB-Zc-Nrt"/>
-                            <constraint firstItem="jcj-Bs-Lce" firstAttribute="leading" secondItem="m8y-65-yhO" secondAttribute="leading" id="Kdv-T6-gDI"/>
+                            <constraint firstItem="m8y-65-yhO" firstAttribute="top" secondItem="jcj-Bs-Lce" secondAttribute="bottom" constant="1" id="LCB-ZD-SKn"/>
                             <constraint firstItem="1p8-fo-ySi" firstAttribute="centerX" secondItem="jcj-Bs-Lce" secondAttribute="centerX" id="LnB-KW-SD2"/>
+                            <constraint firstItem="m8y-65-yhO" firstAttribute="trailing" secondItem="jcj-Bs-Lce" secondAttribute="trailing" id="O7Q-2X-h2t"/>
                             <constraint firstAttribute="bottom" secondItem="2Fp-jx-g9f" secondAttribute="bottom" constant="20" symbolic="YES" id="S89-kT-Rzo"/>
-                            <constraint firstItem="jcj-Bs-Lce" firstAttribute="trailing" secondItem="m8y-65-yhO" secondAttribute="trailing" id="Smv-Ic-q9u"/>
                             <constraint firstItem="dhh-eT-qW1" firstAttribute="centerX" secondItem="1p8-fo-ySi" secondAttribute="centerX" id="cce-2W-Gee"/>
+                            <constraint firstItem="m8y-65-yhO" firstAttribute="leading" secondItem="jcj-Bs-Lce" secondAttribute="leading" id="drK-vk-Or0"/>
                             <constraint firstItem="dhh-eT-qW1" firstAttribute="top" secondItem="un6-2s-phh" secondAttribute="top" constant="43" id="gxw-IW-55C"/>
-                            <constraint firstItem="2Fp-jx-g9f" firstAttribute="centerX" secondItem="m8y-65-yhO" secondAttribute="centerX" id="ok7-tb-XfF"/>
                             <constraint firstItem="1p8-fo-ySi" firstAttribute="top" secondItem="un6-2s-phh" secondAttribute="top" constant="179" id="paO-Tu-dDe"/>
                             <constraint firstItem="jcj-Bs-Lce" firstAttribute="leading" secondItem="un6-2s-phh" secondAttribute="leading" constant="20" symbolic="YES" id="ucT-Lp-gMa"/>
                             <constraint firstItem="dhh-eT-qW1" firstAttribute="leading" secondItem="un6-2s-phh" secondAttribute="leading" id="wg2-E5-5gJ"/>
+                            <constraint firstItem="2Fp-jx-g9f" firstAttribute="top" secondItem="m8y-65-yhO" secondAttribute="bottom" constant="8" symbolic="YES" id="xJ0-hI-XFF"/>
                             <constraint firstAttribute="bottom" secondItem="jcj-Bs-Lce" secondAttribute="bottom" constant="181" id="yyE-13-JAh"/>
                         </constraints>
                     </view>
