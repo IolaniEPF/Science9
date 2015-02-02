@@ -17,7 +17,7 @@
                BlueprintIdentifier = "1206DA5317BF193D004DC20D"
                BuildableName = "Science9.app"
                BlueprintName = "Science9"
-               ReferencedContainer = "container:Science9.xcodeproj">
+               ReferencedContainer = "container:Science 9.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "1206DA5317BF193D004DC20D"
             BuildableName = "Science9.app"
             BlueprintName = "Science9"
-            ReferencedContainer = "container:Science9.xcodeproj">
+            ReferencedContainer = "container:Science 9.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "1206DA5317BF193D004DC20D"
             BuildableName = "Science9.app"
             BlueprintName = "Science9"
-            ReferencedContainer = "container:Science9.xcodeproj">
+            ReferencedContainer = "container:Science 9.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,7 +74,7 @@
             BlueprintIdentifier = "1206DA5317BF193D004DC20D"
             BuildableName = "Science9.app"
             BlueprintName = "Science9"
-            ReferencedContainer = "container:Science9.xcodeproj">
+            ReferencedContainer = "container:Science 9.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
