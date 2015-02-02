@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
     </dependencies>
     <scenes>
-        <!--Finance View Controller-->
+        <!--Science9 View Controller-->
         <scene sceneID="4">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="2" customClass="FinanceViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="2" customClass="Science9ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Vv-dq-i8Z"/>
                         <viewControllerLayoutGuide type="bottom" id="2UL-vc-Yqj"/>
@@ -138,8 +139,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="EPF" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPM-C6-Rw1">
-                                <rect key="frame" x="188" y="123" width="164" height="122"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Science 9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPM-C6-Rw1">
+                                <rect key="frame" x="58" y="123" width="424" height="167"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="122" id="Ob8-zI-aS7"/>
                                     <constraint firstAttribute="width" constant="164" id="pa5-FG-DJR"/>
@@ -169,8 +170,8 @@
                                     <segue destination="wPo-R9-Jbt" kind="push" id="PK5-8u-oUT"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Welcome to your semester Economics and Personal Finance class!" translatesAutoresizingMaskIntoConstraints="NO" id="Hd4-W1-TBR">
-                                <rect key="frame" x="20" y="253" width="500" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Welcome to your semester Science 9 class!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hd4-W1-TBR">
+                                <rect key="frame" x="20" y="298" width="500" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="kyf-eP-NkZ"/>
                                 </constraints>
@@ -1136,8 +1137,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiL-SB-NK6">
-                                <rect key="frame" x="116" y="207" width="10" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="★" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiL-SB-NK6">
+                                <rect key="frame" x="109" y="221" width="21" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

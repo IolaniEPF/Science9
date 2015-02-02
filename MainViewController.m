@@ -1,6 +1,6 @@
 //
 //  MainViewController.m
-//  Finance
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 8/21/13.
 //  Copyright (c) 2013 Blake Tsuzaki. All rights reserved.
@@ -90,7 +90,7 @@ MBProgressHUD *HUD;
     formatter.numberStyle = kCFNumberFormatterDecimalStyle;
     self.balanceLabel.formatBlock = ^NSString* (float value){
         NSString* formatted = [formatter stringFromNumber:@((int)value)];
-        return [NSString stringWithFormat:@"Balance: $%@",formatted];
+        return [NSString stringWithFormat:@"Balance: ★%@",formatted];
     };
     self.XPLabel = [[UICountingLabel alloc] initWithFrame:CGRectMake(275,0,250,40)];
     [self.XPLabel setFont:[UIFont fontWithName:@"Avenir Next Condensed" size:30.0]];

@@ -1,6 +1,6 @@
 //
 //  TransactionsView.m
-//  Finance
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 8/27/13.
 //  Copyright (c) 2013 Blake Tsuzaki. All rights reserved.
@@ -97,7 +97,7 @@
         NSNumber *amountNum = [[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"Amount"];
         NSString *amountString;
         if([[[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"SenderString"] isEqualToString:[[PFUser currentUser] objectForKey:@"AvatarName"]]){
-            amountString = [NSString stringWithFormat:@"- $%@",amountNum];
+            amountString = [NSString stringWithFormat:@"- ★%@",amountNum];
             cell.amountLabel.textColor = [UIColor redColor];
             if ([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]) {
                 //show sender string as well
@@ -110,7 +110,7 @@
             }
         }
         else{
-            amountString = [NSString stringWithFormat:@"+ $%@",amountNum];
+            amountString = [NSString stringWithFormat:@"+ ★%@",amountNum];
             cell.amountLabel.textColor = [UIColor greenColor];
             
             if ([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]) {

@@ -1,6 +1,6 @@
 //
 //  TransactionsViewController.m
-//  Finance
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 8/27/13.
 //  Copyright (c) 2013 Blake Tsuzaki. All rights reserved.
@@ -48,7 +48,7 @@
     formatter.numberStyle = kCFNumberFormatterDecimalStyle;
     self.balanceLabel.formatBlock = ^NSString* (float value){
         NSString* formatted = [formatter stringFromNumber:@((int)value)];
-        return [NSString stringWithFormat:@"Current Balance: $%@",formatted];
+        return [NSString stringWithFormat:@"Current Balance: ★%@",formatted];
     };
     self.XPLabel.formatBlock = ^NSString* (float value){
         NSString* formatted = [formatter stringFromNumber:@((int)value)];

@@ -1,6 +1,6 @@
 //
 //  TransactionConfirmationViewController.m
-//  Finance
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 8/28/13.
 //  Copyright (c) 2013 Blake Tsuzaki. All rights reserved.
@@ -64,7 +64,7 @@ MBProgressHUD *HUD;
     [formatter setDateFormat: @"MM-dd-yyyy  h:mm a"];
     self.dateLabel.text = [NSString stringWithFormat:@"Sent on %@",[formatter stringFromDate:self.transactionObject.createdAt]];
     self.descriptionLabel.text = [self.transactionObject objectForKey:@"Description"];
-    self.amountLabel.text = [NSString stringWithFormat:@"$%@",[self.transactionObject objectForKey:@"Amount"]];
+    self.amountLabel.text = [NSString stringWithFormat:@"★%@",[self.transactionObject objectForKey:@"Amount"]];
     
     PFQuery *avatarQuery = [PFQuery queryWithClassName:@"Avatar"];
     if ([[self.transactionObject objectForKey:@"TransactionType"] isEqualToString:@"Payment"]){
