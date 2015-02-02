@@ -39,7 +39,7 @@
     PFQuery *allTrans = [PFQuery orQueryWithSubqueries:nil];
     
     
-    if ([[[PFUser currentUser] objectForKey: @"Superuser"] isEqual: @YES]) {
+    if ([[[PFUser currentUser] objectForKey: @"superuser"] isEqual: @YES]) {
         
         //query for transactions made to/from Iolani Bank and Mom and Dad accounts
         PFQuery *nonStudentQuery = [PFUser query];
@@ -96,10 +96,10 @@
         TransactionViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transactionCell" forIndexPath:indexPath];
         NSNumber *amountNum = [[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"Amount"];
         NSString *amountString;
-        if([[[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"SenderString"] isEqualToString:[[PFUser currentUser] objectForKey:@"AvatarName"]]){
+        if([[[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"SenderString"] isEqualToString:[[PFUser currentUser] objectForKey:@"avatarName"]]){
             amountString = [NSString stringWithFormat:@"- ★%@",amountNum];
             cell.amountLabel.textColor = [UIColor redColor];
-            if ([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]) {
+            if ([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]) {
                 //show sender string as well
                 
                 cell.bigLabel.text = [NSString stringWithFormat:@"%@ - from %@ to %@" ,[[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"Description"],[[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"SenderString"],[[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"RecipientString"]];
@@ -113,7 +113,7 @@
             amountString = [NSString stringWithFormat:@"+ ★%@",amountNum];
             cell.amountLabel.textColor = [UIColor greenColor];
             
-            if ([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]) {
+            if ([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]) {
                 //show other string
                 cell.bigLabel.text = [NSString stringWithFormat:@"%@ - to %@ from %@",[[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"Description"],[[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"RecipientString"],[[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"SenderString"]];
             }

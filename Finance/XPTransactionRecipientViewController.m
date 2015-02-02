@@ -43,7 +43,7 @@ MBProgressHUD *HUD;
 - (int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     PFQuery *userQuery = [PFUser query];
-    [userQuery orderByAscending:@"username"];
+    [userQuery orderByAscending:@"email"];
     NSError *error = nil;
     self.users = [userQuery findObjects:&error];
     if(error){
@@ -65,8 +65,8 @@ MBProgressHUD *HUD;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RecipientCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recipientCell" forIndexPath:indexPath];
-    cell.emailLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"username"];
-    cell.avatarNameLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"AvatarName"];
+    cell.emailLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"email"];
+    cell.avatarNameLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"avatarName"];
     if([self.selectedUsers containsObject:[self.users objectAtIndex:indexPath.row]]){
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }else{
@@ -104,13 +104,13 @@ MBProgressHUD *HUD;
         [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"XPAmount"] forKey:@"Amount"];
         [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"XPDescription"] forKey:@"Description"];
         //PFQuery *recipientBalanceQuery = [PFQuery queryWithClassName:@"Balances"];
-        //[recipientBalanceQuery whereKey:@"AvatarName" equalTo:[[self.selectedUsers objectAtIndex:i] objectForKey:@"AvatarName"]];
+        //[recipientBalanceQuery whereKey:@"avatarName" equalTo:[[self.selectedUsers objectAtIndex:i] objectForKey:@"avatarName"]];
         //PFObject *recipientBalance = [recipientBalanceQuery getFirstObject];
         //NSNumber *transactionAmount = [[NSUserDefaults standardUserDefaults]objectForKey:@"XPAmount"];
         [newTransaction setObject:[self.selectedUsers objectAtIndex:i] forKey:@"Recipient"];
         [newTransaction setObject:[PFUser currentUser] forKey:@"Sender"];
-        [newTransaction setObject:[[self.selectedUsers objectAtIndex:i] objectForKey:@"AvatarName"] forKey:@"RecipientString"];
-        //[recipientBalance setObject:[NSNumber numberWithFloat:([[recipientBalance objectForKey:@"ExperiencePoints"] floatValue]+[transactionAmount floatValue])] forKey:@"ExperiencePoints"];
+        [newTransaction setObject:[[self.selectedUsers objectAtIndex:i] objectForKey:@"avatarName"] forKey:@"RecipientString"];
+        //[recipientBalance setObject:[NSNumber numberWithFloat:([[recipientBalance objectForKey:@"points"] floatValue]+[transactionAmount floatValue])] forKey:@"points"];
         [newTransaction save:&error];
         //[PFObject saveAll:[NSArray arrayWithObjects:newTransaction,recipientBalance, nil] error:&error];
     }

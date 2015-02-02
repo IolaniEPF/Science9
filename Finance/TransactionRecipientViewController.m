@@ -26,7 +26,7 @@ MBProgressHUD *HUD;
     return self;
 }
 - (void)viewWillAppear:(BOOL)animated{
-    if([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]){
+    if([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]){
         self.avatarTable.multipleTouchEnabled = YES;
         [self.avatarTable setAllowsMultipleSelection:YES];
     }else{
@@ -43,11 +43,11 @@ MBProgressHUD *HUD;
 - (int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     PFQuery *userQuery = [PFUser query];
-    [userQuery orderByAscending:@"username"];
-    if([[[NSUserDefaults standardUserDefaults] objectForKey:@"transactionType"] isEqual:@"Deposit"]&&[[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@NO]){
+    [userQuery orderByAscending:@"email"];
+    if([[[NSUserDefaults standardUserDefaults] objectForKey:@"transactionType"] isEqual:@"Deposit"]&&[[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@NO]){
         [userQuery whereKey:@"isStudent" equalTo:@NO];
     }
-    [userQuery whereKey:@"AvatarName" notEqualTo:[[PFUser currentUser] objectForKey:@"AvatarName"]];
+    [userQuery whereKey:@"avatarName" notEqualTo:[[PFUser currentUser] objectForKey:@"avatarName"]];
     NSError *error = nil;
     self.users = [[NSMutableArray alloc] initWithArray:[userQuery findObjects:&error]];
     if(error){
@@ -69,9 +69,9 @@ MBProgressHUD *HUD;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RecipientCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recipientCell" forIndexPath:indexPath];
-    cell.emailLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"username"];
-    cell.avatarNameLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"AvatarName"];
-    if ([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]){
+    cell.emailLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"email"];
+    cell.avatarNameLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"avatarName"];
+    if ([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]){
         if ([[tableView indexPathsForSelectedRows] containsObject:indexPath]){
             [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
         }else{
@@ -84,13 +84,13 @@ MBProgressHUD *HUD;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     selectedRow = indexPath.row;
     [self.nextButton setEnabled:YES];
-    if ([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]){
+    if ([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]){
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]){
+    if ([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]){
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
     }
 }
@@ -112,7 +112,7 @@ MBProgressHUD *HUD;
 	[self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
     HUD.labelText = @"Sending";
-    if ([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]){
+    if ([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]){
         [HUD showWhileExecuting:@selector(uploadMultiple) onTarget:self withObject:nil animated:YES];
     }else{
         [HUD showWhileExecuting:@selector(uploadData) onTarget:self withObject:nil animated:YES];
@@ -126,18 +126,18 @@ MBProgressHUD *HUD;
         [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionAmount"] forKey:@"Amount"];
         [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionDescription"] forKey:@"Description"];
         [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionType"] forKey:@"TransactionType"];
-        [newTransaction setObject:[[PFUser currentUser]objectForKey:@"AvatarName"] forKey:@"CreatedBy"];
+        [newTransaction setObject:[[PFUser currentUser]objectForKey:@"avatarName"] forKey:@"CreatedBy"];
         NSInteger recipient = [[[self.avatarTable indexPathsForSelectedRows] objectAtIndex:i] row];
         if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionType"] isEqualToString:@"Payment"]){
             [newTransaction setObject:[PFUser currentUser] forKey:@"Sender"];
-            [newTransaction setObject:[[PFUser currentUser] objectForKey:@"AvatarName"] forKey:@"SenderString"];
+            [newTransaction setObject:[[PFUser currentUser] objectForKey:@"avatarName"] forKey:@"SenderString"];
             [newTransaction setObject:[self.users objectAtIndex:recipient] forKey:@"Recipient"];
-            [newTransaction setObject:[[self.users objectAtIndex:recipient] objectForKey:@"AvatarName"] forKey:@"RecipientString"];
+            [newTransaction setObject:[[self.users objectAtIndex:recipient] objectForKey:@"avatarName"] forKey:@"RecipientString"];
             
         }else{
             [newTransaction setObject:[PFUser currentUser] forKey:@"Recipient"];
-            [newTransaction setObject:[[PFUser currentUser] objectForKey:@"AvatarName"] forKey:@"RecipientString"];
-            [newTransaction setObject:[[self.users objectAtIndex:recipient] objectForKey:@"AvatarName"] forKey:@"SenderString"];
+            [newTransaction setObject:[[PFUser currentUser] objectForKey:@"avatarName"] forKey:@"RecipientString"];
+            [newTransaction setObject:[[self.users objectAtIndex:recipient] objectForKey:@"avatarName"] forKey:@"SenderString"];
             [newTransaction setObject:[self.users objectAtIndex:recipient] forKey:@"Sender"];
         }
         [objects addObject:newTransaction];
@@ -174,7 +174,7 @@ MBProgressHUD *HUD;
     [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionAmount"] forKey:@"Amount"];
     [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionDescription"] forKey:@"Description"];
     [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionType"] forKey:@"TransactionType"];
-    [newTransaction setObject:[[PFUser currentUser]objectForKey:@"AvatarName"] forKey:@"CreatedBy"];
+    [newTransaction setObject:[[PFUser currentUser]objectForKey:@"avatarName"] forKey:@"CreatedBy"];
     if(error){
         [HUD hide:YES];
         NSString *errorString = [error localizedDescription];
@@ -188,14 +188,14 @@ MBProgressHUD *HUD;
     }else{
         if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionType"] isEqualToString:@"Payment"]){
             [newTransaction setObject:[PFUser currentUser] forKey:@"Sender"];
-            [newTransaction setObject:[[PFUser currentUser] objectForKey:@"AvatarName"] forKey:@"SenderString"];
+            [newTransaction setObject:[[PFUser currentUser] objectForKey:@"avatarName"] forKey:@"SenderString"];
             [newTransaction setObject:[self.users objectAtIndex:selectedRow] forKey:@"Recipient"];
-            [newTransaction setObject:[[self.users objectAtIndex:selectedRow] objectForKey:@"AvatarName"] forKey:@"RecipientString"];
+            [newTransaction setObject:[[self.users objectAtIndex:selectedRow] objectForKey:@"avatarName"] forKey:@"RecipientString"];
 
         }else{
             [newTransaction setObject:[PFUser currentUser] forKey:@"Recipient"];
-            [newTransaction setObject:[[PFUser currentUser] objectForKey:@"AvatarName"] forKey:@"RecipientString"];
-            [newTransaction setObject:[[self.users objectAtIndex:selectedRow] objectForKey:@"AvatarName"] forKey:@"SenderString"];
+            [newTransaction setObject:[[PFUser currentUser] objectForKey:@"avatarName"] forKey:@"RecipientString"];
+            [newTransaction setObject:[[self.users objectAtIndex:selectedRow] objectForKey:@"avatarName"] forKey:@"SenderString"];
             [newTransaction setObject:[self.users objectAtIndex:selectedRow] forKey:@"Sender"];
         }
         [newTransaction save:&error];

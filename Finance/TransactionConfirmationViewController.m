@@ -68,10 +68,10 @@ MBProgressHUD *HUD;
     
     PFQuery *avatarQuery = [PFQuery queryWithClassName:@"Avatar"];
     if ([[self.transactionObject objectForKey:@"TransactionType"] isEqualToString:@"Payment"]){
-        self.toLabel.text = [[[self.transactionObject objectForKey:@"Recipient"] fetchIfNeeded] objectForKey:@"AvatarName"];
+        self.toLabel.text = [[[self.transactionObject objectForKey:@"Recipient"] fetchIfNeeded] objectForKey:@"avatarName"];
         [avatarQuery whereKey:@"user" equalTo:[self.transactionObject objectForKey:@"Recipient"]];
     }else{
-        self.toLabel.text = [[[self.transactionObject objectForKey:@"Sender"] fetchIfNeeded] objectForKey:@"AvatarName"];
+        self.toLabel.text = [[[self.transactionObject objectForKey:@"Sender"] fetchIfNeeded] objectForKey:@"avatarName"];
         [avatarQuery whereKey:@"user" equalTo:[self.transactionObject objectForKey:@"Sender"]];
     }
     PFFile *avatar = [[avatarQuery getFirstObject] objectForKey:@"imageFile"];

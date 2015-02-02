@@ -145,7 +145,7 @@
     NSLog(@"Logging into Parse");
     
     PFQuery *userQuery = [PFUser query];
-    [userQuery whereKey:@"username" equalTo:[GPPSignIn sharedInstance].authentication.userEmail];
+    [userQuery whereKey:@"email" equalTo:[GPPSignIn sharedInstance].authentication.userEmail];
     if([userQuery getFirstObject]){
         NSError *error = nil;
         [PFUser logInWithUsername:[GPPSignIn sharedInstance].authentication.userEmail password:@"iolani63" error:&error];

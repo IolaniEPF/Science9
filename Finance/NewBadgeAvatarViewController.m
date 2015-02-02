@@ -41,7 +41,7 @@ MBProgressHUD *HUD;
 - (int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     PFQuery *userQuery = [PFUser query];
-    [userQuery orderByAscending:@"username"];
+    [userQuery orderByAscending:@"email"];
     NSError *error = nil;
     self.users = [userQuery findObjects:&error];
     if(error){
@@ -63,8 +63,8 @@ MBProgressHUD *HUD;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RecipientCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recipientCell" forIndexPath:indexPath];
-    cell.emailLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"username"];
-    cell.avatarNameLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"AvatarName"];
+    cell.emailLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"email"];
+    cell.avatarNameLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"avatarName"];
     if([self.selectedUsers containsObject:[self.users objectAtIndex:indexPath.row]]){
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }else{

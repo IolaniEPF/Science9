@@ -47,7 +47,7 @@ MBProgressHUD *HUD;
     [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"TabBack.png"]];
     [self.avatarImageView setImage:[UIImage roundedImageWithImage:[UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"plusImage"]]]];
     [self.backgroundImageView setImage:[UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"backgroundImage"]]];
-    self.nameLabel.text = [[PFUser currentUser]objectForKey:@"AvatarName"];
+    self.nameLabel.text = [[PFUser currentUser]objectForKey:@"avatarName"];
     self.badgeView.dataSource = self.badgeView;
     self.badgeView.delegate = self.badgeView;
     [self displayCountingLabels];
@@ -108,12 +108,12 @@ MBProgressHUD *HUD;
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:0.0] forKey:@"currentXP"];
     }
     
-    [self.balanceLabel countFrom:0.0 to:[[[[[PFUser currentUser] objectForKey:@"Balances"] fetchIfNeeded] objectForKey:@"CashBalance"] floatValue] withDuration:2.];
+    [self.balanceLabel countFrom:0.0 to:[[[[[PFUser currentUser] objectForKey:@"Balances"] fetchIfNeeded] objectForKey:@"starBalance"] floatValue] withDuration:2.];
     
-    [self.XPLabel countFrom:0.0 to:[[[[[PFUser currentUser] objectForKey:@"Balances"] fetchIfNeeded] objectForKey:@"ExperiencePoints"] floatValue] withDuration:2.];
+    [self.XPLabel countFrom:0.0 to:[[[[[PFUser currentUser] objectForKey:@"Balances"] fetchIfNeeded] objectForKey:@"points"] floatValue] withDuration:2.];
     
-    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"ExperiencePoints"] forKey:@"currentXP"];
-    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"CashBalance"] forKey:@"currentBalance"];
+    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"points"] forKey:@"currentXP"];
+    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"starBalance"] forKey:@"currentBalance"];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     [self.backgroundScrollView setContentOffset:CGPointMake((scrollView.contentOffset.x *.5), (scrollView.contentOffset.y *.5)) animated:NO];
@@ -195,10 +195,10 @@ MBProgressHUD *HUD;
 }
 
 - (void)reloadBalances{
-    [self.balanceLabel countFrom:[[[NSUserDefaults standardUserDefaults] objectForKey:@"currentBalance"] floatValue] to:[[[[[PFUser currentUser] objectForKey:@"Balances"] fetchIfNeeded] objectForKey:@"CashBalance"] floatValue] withDuration:2.];
-    [self.XPLabel countFrom:[[[NSUserDefaults standardUserDefaults] objectForKey:@"currentXP"] floatValue] to:[[[[[PFUser currentUser] objectForKey:@"Balances"] fetchIfNeeded] objectForKey:@"ExperiencePoints"] floatValue] withDuration:2.];
-    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"ExperiencePoints"] forKey:@"currentXP"];
-    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"CashBalance"] forKey:@"currentBalance"];
+    [self.balanceLabel countFrom:[[[NSUserDefaults standardUserDefaults] objectForKey:@"currentBalance"] floatValue] to:[[[[[PFUser currentUser] objectForKey:@"Balances"] fetchIfNeeded] objectForKey:@"starBalance"] floatValue] withDuration:2.];
+    [self.XPLabel countFrom:[[[NSUserDefaults standardUserDefaults] objectForKey:@"currentXP"] floatValue] to:[[[[[PFUser currentUser] objectForKey:@"Balances"] fetchIfNeeded] objectForKey:@"points"] floatValue] withDuration:2.];
+    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"points"] forKey:@"currentXP"];
+    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"starBalance"] forKey:@"currentBalance"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ReloadTransactions"
                                                         object:nil
                                                       userInfo:nil];

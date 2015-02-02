@@ -37,7 +37,7 @@
                                              selector:@selector(reloadTables)
                                                  name:@"ReloadTransactions"
                                                object:nil];
-    if([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]){
+    if([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]){
         [self.XPButton setHidden:NO];
         [self.badgeButton setHidden:NO];
     }else{
@@ -62,7 +62,7 @@
 - (void)reloadTables{
     [self.CashView reloadData];
     [self.XPView reloadData];
-    if([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]){
+    if([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]){
         [self.XPButton setHidden:NO];
         [self.badgeButton setHidden:NO];
     }else{
@@ -71,11 +71,11 @@
     }
     [[[PFUser currentUser] objectForKey:@"Balances"] fetch];
     
-    [self.balanceLabel countFrom:[[[NSUserDefaults standardUserDefaults] objectForKey:@"currentBalance"] floatValue] to:[[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"CashBalance"] floatValue] withDuration:2.];
-    [self.XPLabel countFrom:[[[NSUserDefaults standardUserDefaults] objectForKey:@"currentXP"] floatValue] to:[[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"ExperiencePoints"] floatValue] withDuration:2.];
+    [self.balanceLabel countFrom:[[[NSUserDefaults standardUserDefaults] objectForKey:@"currentBalance"] floatValue] to:[[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"starBalance"] floatValue] withDuration:2.];
+    [self.XPLabel countFrom:[[[NSUserDefaults standardUserDefaults] objectForKey:@"currentXP"] floatValue] to:[[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"points"] floatValue] withDuration:2.];
     
-    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"ExperiencePoints"] forKey:@"currentXP"];
-    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"CashBalance"] forKey:@"currentBalance"];
+    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"points"] forKey:@"currentXP"];
+    [[NSUserDefaults standardUserDefaults] setObject:[[[PFUser currentUser] objectForKey:@"Balances"] objectForKey:@"starBalance"] forKey:@"currentBalance"];
 }
 - (void)didReceiveMemoryWarning
 {

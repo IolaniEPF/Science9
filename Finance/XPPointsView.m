@@ -27,7 +27,7 @@
 - (int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     PFQuery *recipientQuery = [PFQuery queryWithClassName:@"XPTransactions"];
-    if (!([[[PFUser currentUser] objectForKey:(@"Superuser")] isEqual:@YES]))   {
+    if (!([[[PFUser currentUser] objectForKey:(@"superuser")] isEqual:@YES]))   {
         
         [recipientQuery whereKey: @"Recipient" equalTo:[PFUser currentUser]];
         //if current user is not a superuser, constrain query to current user's XP transactions
@@ -66,7 +66,7 @@
         cell.amountLabel.textColor = [UIColor greenColor];
     }
     
-    if ([[[PFUser currentUser] objectForKey:@"Superuser"] isEqual:@YES]) {
+    if ([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]) {
         cell.bigLabel.text = [NSString stringWithFormat:@"%@ - to %@",[[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"Description"],[[self.transactionArray objectAtIndex: indexPath.row] objectForKey:@"RecipientString"]];
         //add recipient to end of string if superuser
     }

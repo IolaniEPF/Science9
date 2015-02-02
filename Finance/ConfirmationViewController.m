@@ -61,18 +61,18 @@ MBProgressHUD *HUD;
 - (void)signUpForParse{
     HUD.labelText = @"Signing in";
     PFUser *newUser = [PFUser user];
-    newUser.username = [GPPSignIn sharedInstance].authentication.userEmail;
+    newUser.email = [GPPSignIn sharedInstance].authentication.userEmail;
     newUser.password = @"iolani63";
     
-    [newUser setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"avatarName"] forKey:@"AvatarName"];
-    [newUser setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"classPeriod"] forKey:@"ClassPeriod"];
-    [newUser setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"displayName"] forKey:@"DisplayName"];
-    [newUser setObject:@NO forKey:@"Superuser"];
+    [newUser setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"avatarName"] forKey:@"avatarName"];
+    [newUser setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"classPeriod"] forKey:@"classPeriod"];
+    [newUser setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"displayName"] forKey:@"displayName"];
+    [newUser setObject:@NO forKey:@"superuser"];
     
     PFObject *balances = [[PFObject alloc] initWithClassName:@"Balances"];
-    [balances setObject:[NSNumber numberWithInt:35000] forKey:@"CashBalance"];
-    [balances setObject:[NSNumber numberWithInt:0] forKey:@"ExperiencePoints"];
-    [balances setObject:[newUser objectForKey:@"AvatarName"] forKey:@"AvatarName"];
+    [balances setObject:[NSNumber numberWithInt:35000] forKey:@"starBalance"];
+    [balances setObject:[NSNumber numberWithInt:0] forKey:@"points"];
+    [balances setObject:[newUser objectForKey:@"avatarName"] forKey:@"avatarName"];
     [newUser setObject:balances forKey:@"Balances"];
     
     NSError *error = nil;
@@ -97,22 +97,22 @@ MBProgressHUD *HUD;
     HUD.labelText = @"Uploading data";
     
     PFObject *avatarPhoto = [PFObject objectWithClassName:@"Avatar"];
-    PFFile *avatar = [PFFile fileWithName:[[[PFUser currentUser] objectForKey:@"AvatarName"] stringByAppendingString:@".png"] data:[[NSUserDefaults standardUserDefaults] objectForKey:@"plusImage"]];
+    PFFile *avatar = [PFFile fileWithName:[[[PFUser currentUser] objectForKey:@"avatarName"] stringByAppendingString:@".png"] data:[[NSUserDefaults standardUserDefaults] objectForKey:@"plusImage"]];
     [avatar save:&error];
     
     
     [avatarPhoto setObject:avatar forKey:@"imageFile"];
     [avatarPhoto setObject:[PFUser currentUser] forKey:@"user"];
-    [avatarPhoto setObject:[[PFUser currentUser] username] forKey:@"FileName"];
+    [avatarPhoto setObject:[[PFUser currentUser] email] forKey:@"FileName"];
     [avatarPhoto save:&error];
     
     PFObject *backgroundPhoto = [PFObject objectWithClassName:@"Background"];
-    PFFile *background = [PFFile fileWithName:[[[PFUser currentUser] objectForKey:@"AvatarName"] stringByAppendingString:@".png"] data:[[NSUserDefaults standardUserDefaults] objectForKey:@"backgroundImage"]];
+    PFFile *background = [PFFile fileWithName:[[[PFUser currentUser] objectForKey:@"avatarName"] stringByAppendingString:@".png"] data:[[NSUserDefaults standardUserDefaults] objectForKey:@"backgroundImage"]];
     [background save:&error];
     
     [backgroundPhoto setObject:background forKey:@"imageFile"];
     [backgroundPhoto setObject:[PFUser currentUser] forKey:@"user"];
-    [backgroundPhoto setObject:[[PFUser currentUser] username] forKey:@"FileName"];
+    [backgroundPhoto setObject:[[PFUser currentUser] email] forKey:@"FileName"];
     [backgroundPhoto save:&error];
     
     HUD.labelText = @"Registering iPad";
