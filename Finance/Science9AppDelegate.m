@@ -14,7 +14,7 @@
 @implementation Science9AppDelegate
 
 static NSString * const kClientID =
-@"800860225898-v0cbku19ojugg8aulvpjl4ve4o55pvrv.apps.googleusercontent.com";
+@"934847551906-3d1stf5os7bi04tf089a4bm11lq9dk19.apps.googleusercontent.com";
 
 - (void)dealloc
 {
