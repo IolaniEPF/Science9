@@ -103,7 +103,7 @@ MBProgressHUD *HUD;
     
     [avatarPhoto setObject:avatar forKey:@"imageFile"];
     [avatarPhoto setObject:[PFUser currentUser] forKey:@"user"];
-    [avatarPhoto setObject:[[PFUser currentUser] email] forKey:@"FileName"];
+    [avatarPhoto setObject:[[PFUser currentUser] email] forKey:@"fileName"];
     [avatarPhoto save:&error];
     
     PFObject *backgroundPhoto = [PFObject objectWithClassName:@"Background"];
@@ -112,7 +112,7 @@ MBProgressHUD *HUD;
     
     [backgroundPhoto setObject:background forKey:@"imageFile"];
     [backgroundPhoto setObject:[PFUser currentUser] forKey:@"user"];
-    [backgroundPhoto setObject:[[PFUser currentUser] email] forKey:@"FileName"];
+    [backgroundPhoto setObject:[[PFUser currentUser] email] forKey:@"fileName"];
     [backgroundPhoto save:&error];
     
     HUD.labelText = @"Registering iPad";
