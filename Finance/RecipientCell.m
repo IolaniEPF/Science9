@@ -1,6 +1,6 @@
 //
 //  RecipientCell.m
-//  Finance
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 8/28/13.
 //  Copyright (c) 2013 Blake Tsuzaki. All rights reserved.
