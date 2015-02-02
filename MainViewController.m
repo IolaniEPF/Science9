@@ -11,7 +11,7 @@
 #import <Parse/Parse.h>
 #import "UICountingLabel.h"
 #import "LifeEventViewController.h"
-#import "EPFWebViewController.h"
+#import "Sci9WebViewController.h"
 
 @interface MainViewController ()
 @property (retain, nonatomic) UICountingLabel *balanceLabel;
@@ -69,7 +69,7 @@ MBProgressHUD *HUD;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    EPFWebViewController *webViewController = segue.destinationViewController;
+    Sci9WebViewController *webViewController = segue.destinationViewController;
     
     if([segue.identifier isEqualToString:@"announcementsSegue"])
     {

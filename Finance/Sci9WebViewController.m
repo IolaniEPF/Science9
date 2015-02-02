@@ -1,18 +1,18 @@
 //
-//  EPFWebViewController.m
-//  EPF
+//  Sci9WebViewController.m
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 7/21/13.
 //  Copyright (c) 2013 'Iolani School. All rights reserved.
 //
 
-#import "EPFWebViewController.h"
+#import "Sci9WebViewController.h"
 
-@interface EPFWebViewController ()
+@interface Sci9WebViewController ()
 
 @end
 
-@implementation EPFWebViewController
+@implementation Sci9WebViewController
 @synthesize webView = mWebView;
 @synthesize toolbar = mToolbar;
 @synthesize back = mBack;

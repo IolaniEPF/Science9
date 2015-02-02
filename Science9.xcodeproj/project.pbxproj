@@ -76,7 +76,7 @@
 		125FD89D17D46F930056BECD /* arrow_circle_left_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 125FD89917D46F930056BECD /* arrow_circle_left_24.png */; };
 		125FD89E17D46F930056BECD /* arrow_left_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 125FD89A17D46F930056BECD /* arrow_left_24.png */; };
 		125FD89F17D46F930056BECD /* arrow_right_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 125FD89B17D46F930056BECD /* arrow_right_24.png */; };
-		125FD8A217D470480056BECD /* EPFWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125FD8A117D46FDF0056BECD /* EPFWebViewController.m */; };
+		125FD8A217D470480056BECD /* Sci9WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125FD8A117D46FDF0056BECD /* Sci9WebViewController.m */; };
 		125FD8A517D472360056BECD /* Announcements.png in Resources */ = {isa = PBXBuildFile; fileRef = 125FD8A317D472360056BECD /* Announcements.png */; };
 		125FD8A817D472720056BECD /* Drive.png in Resources */ = {isa = PBXBuildFile; fileRef = 125FD8A717D472720056BECD /* Drive.png */; };
 		126B470617C7588500E3CE12 /* Forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 126B470517C7588500E3CE12 /* Forward.png */; };
@@ -199,8 +199,8 @@
 		125FD89917D46F930056BECD /* arrow_circle_left_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_circle_left_24.png; sourceTree = "<group>"; };
 		125FD89A17D46F930056BECD /* arrow_left_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left_24.png; sourceTree = "<group>"; };
 		125FD89B17D46F930056BECD /* arrow_right_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right_24.png; sourceTree = "<group>"; };
-		125FD8A017D46FDF0056BECD /* EPFWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPFWebViewController.h; sourceTree = "<group>"; };
-		125FD8A117D46FDF0056BECD /* EPFWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPFWebViewController.m; sourceTree = "<group>"; };
+		125FD8A017D46FDF0056BECD /* Sci9WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sci9WebViewController.h; sourceTree = "<group>"; };
+		125FD8A117D46FDF0056BECD /* Sci9WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sci9WebViewController.m; sourceTree = "<group>"; };
 		125FD8A317D472360056BECD /* Announcements.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Announcements.png; sourceTree = "<group>"; };
 		125FD8A717D472720056BECD /* Drive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drive.png; sourceTree = "<group>"; };
 		126B470517C7588500E3CE12 /* Forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Forward.png; sourceTree = "<group>"; };
@@ -432,8 +432,8 @@
 				1228738217CD494F00F36BEF /* Badges */,
 				123B6B8B17C5475500EB7138 /* MainViewController.h */,
 				123B6B8C17C5475500EB7138 /* MainViewController.m */,
-				125FD8A017D46FDF0056BECD /* EPFWebViewController.h */,
-				125FD8A117D46FDF0056BECD /* EPFWebViewController.m */,
+				125FD8A017D46FDF0056BECD /* Sci9WebViewController.h */,
+				125FD8A117D46FDF0056BECD /* Sci9WebViewController.m */,
 			);
 			name = "Home Screen";
 			sourceTree = "<group>";
@@ -610,7 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				125FD8A217D470480056BECD /* EPFWebViewController.m in Sources */,
+				125FD8A217D470480056BECD /* Sci9WebViewController.m in Sources */,
 				12505E7117D1E6E100812A2D /* BadgeViewController.m in Sources */,
 				122873B017CF5B6400F36BEF /* UICountingLabel.m in Sources */,
 				12DB25C317C89D6600386DF3 /* MBProgressHUD.m in Sources */,

@@ -1,6 +1,6 @@
 //
-//  EPFWebViewController.h
-//  EPF
+//  Sci9WebViewController.h
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 7/21/13.
 //  Copyright (c) 2013 'Iolani School. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EPFWebViewController : UIViewController <UIWebViewDelegate>{
+@interface Sci9WebViewController : UIViewController <UIWebViewDelegate>{
     UIWebView* mWebView;
     UIToolbar* mToolbar;
     UIBarButtonItem* mBack;
