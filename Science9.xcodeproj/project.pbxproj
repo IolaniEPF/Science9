@@ -12,7 +12,7 @@
 		1206DA5C17BF193D004DC20D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1206DA5B17BF193D004DC20D /* CoreGraphics.framework */; };
 		1206DA6217BF193D004DC20D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1206DA6017BF193D004DC20D /* InfoPlist.strings */; };
 		1206DA6417BF193D004DC20D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1206DA6317BF193D004DC20D /* main.m */; };
-		1206DA6817BF193D004DC20D /* FinanceAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1206DA6717BF193D004DC20D /* FinanceAppDelegate.m */; };
+		1206DA6817BF193D004DC20D /* Science9AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1206DA6717BF193D004DC20D /* Science9AppDelegate.m */; };
 		1206DA6A17BF193D004DC20D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1206DA6917BF193D004DC20D /* Default.png */; };
 		1206DA6C17BF193D004DC20D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1206DA6B17BF193D004DC20D /* Default@2x.png */; };
 		1206DA6E17BF193D004DC20D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1206DA6D17BF193D004DC20D /* Default-568h@2x.png */; };
@@ -112,8 +112,8 @@
 		1206DA6117BF193D004DC20D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1206DA6317BF193D004DC20D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1206DA6517BF193D004DC20D /* Science9-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Science9-Prefix.pch"; sourceTree = "<group>"; };
-		1206DA6617BF193D004DC20D /* FinanceAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinanceAppDelegate.h; sourceTree = "<group>"; };
-		1206DA6717BF193D004DC20D /* FinanceAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinanceAppDelegate.m; sourceTree = "<group>"; };
+		1206DA6617BF193D004DC20D /* Science9AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Science9AppDelegate.h; sourceTree = "<group>"; };
+		1206DA6717BF193D004DC20D /* Science9AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Science9AppDelegate.m; sourceTree = "<group>"; };
 		1206DA6917BF193D004DC20D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1206DA6B17BF193D004DC20D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1206DA6D17BF193D004DC20D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -330,8 +330,8 @@
 		1206DA5D17BF193D004DC20D /* Science9 */ = {
 			isa = PBXGroup;
 			children = (
-				1206DA6617BF193D004DC20D /* FinanceAppDelegate.h */,
-				1206DA6717BF193D004DC20D /* FinanceAppDelegate.m */,
+				1206DA6617BF193D004DC20D /* Science9AppDelegate.h */,
+				1206DA6717BF193D004DC20D /* Science9AppDelegate.m */,
 				4574DE4118021B3B0005CE39 /* MainStoryboard.storyboard */,
 				122873B117CF72E200F36BEF /* FeedbackViewController.h */,
 				122873B217CF72E200F36BEF /* FeedbackViewController.m */,
@@ -616,7 +616,7 @@
 				12DB25C317C89D6600386DF3 /* MBProgressHUD.m in Sources */,
 				123B6B8717C4B95A00EB7138 /* UIImage+RoundedImage.m in Sources */,
 				1206DA6417BF193D004DC20D /* main.m in Sources */,
-				1206DA6817BF193D004DC20D /* FinanceAppDelegate.m in Sources */,
+				1206DA6817BF193D004DC20D /* Science9AppDelegate.m in Sources */,
 				1206DA7417BF193E004DC20D /* Science9ViewController.m in Sources */,
 				123B6B8D17C5475500EB7138 /* MainViewController.m in Sources */,
 				126B470A17C75C7B00E3CE12 /* AvatarNameViewController.m in Sources */,

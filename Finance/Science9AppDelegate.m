@@ -1,17 +1,17 @@
 //
-//  FinanceAppDelegate.m
-//  Finance
+//  Science 9AppDelegate.m
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 8/16/13.
 //  Copyright (c) 2013 Blake Tsuzaki. All rights reserved.
 //
 
 #import <Parse/Parse.h>
-#import "FinanceAppDelegate.h"
+#import "Science9AppDelegate.h"
 #import <GooglePlus/GooglePlus.h>
 #import <AddressBook/AddressBook.h>
 
-@implementation FinanceAppDelegate
+@implementation Science9AppDelegate
 
 static NSString * const kClientID =
 @"800860225898-v0cbku19ojugg8aulvpjl4ve4o55pvrv.apps.googleusercontent.com";

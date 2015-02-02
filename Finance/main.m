@@ -1,6 +1,6 @@
 //
 //  main.m
-//  Finance
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 8/16/13.
 //  Copyright (c) 2013 Blake Tsuzaki. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "FinanceAppDelegate.h"
+#import "Science9AppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([FinanceAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([Science9AppDelegate class]));
     }
 }

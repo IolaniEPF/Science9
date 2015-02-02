@@ -1,6 +1,6 @@
 //
-//  FinanceAppDelegate.h
-//  Finance
+//  Science 9AppDelegate.h
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 8/16/13.
 //  Copyright (c) 2013 Blake Tsuzaki. All rights reserved.
@@ -11,7 +11,7 @@
 
 @class GTMOAuth2Authentication;
 
-@interface FinanceAppDelegate : UIResponder <UIApplicationDelegate>
+@interface Science9AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
