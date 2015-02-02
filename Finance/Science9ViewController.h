@@ -1,6 +1,6 @@
 //
-//  FinanceViewController.h
-//  Finance
+//  Science 9ViewController.h
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 8/16/13.
 //  Copyright (c) 2013 Blake Tsuzaki. All rights reserved.
@@ -12,7 +12,7 @@
 
 @class GPPSignInButton;
 
-@interface FinanceViewController : UIViewController <GPPSignInDelegate>
+@interface Science9ViewController : UIViewController <GPPSignInDelegate>
 @property (retain, nonatomic) IBOutlet GPPSignInButton *signInButton;
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *signInActivity;
 @property (retain, nonatomic) IBOutlet UILabel *signInLabel;

@@ -16,7 +16,7 @@
 		1206DA6A17BF193D004DC20D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1206DA6917BF193D004DC20D /* Default.png */; };
 		1206DA6C17BF193D004DC20D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1206DA6B17BF193D004DC20D /* Default@2x.png */; };
 		1206DA6E17BF193D004DC20D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1206DA6D17BF193D004DC20D /* Default-568h@2x.png */; };
-		1206DA7417BF193E004DC20D /* FinanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1206DA7317BF193E004DC20D /* FinanceViewController.m */; };
+		1206DA7417BF193E004DC20D /* Science9ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1206DA7317BF193E004DC20D /* Science9ViewController.m */; };
 		1228735117CCAEC700F36BEF /* Down.png in Resources */ = {isa = PBXBuildFile; fileRef = 1228734F17CCAEC700F36BEF /* Down.png */; };
 		1228735217CCAEC700F36BEF /* Up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1228735017CCAEC700F36BEF /* Up.png */; };
 		1228735417CCB2CA00F36BEF /* 123-id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 1228735317CCB2CA00F36BEF /* 123-id-card.png */; };
@@ -117,8 +117,8 @@
 		1206DA6917BF193D004DC20D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1206DA6B17BF193D004DC20D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1206DA6D17BF193D004DC20D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		1206DA7217BF193E004DC20D /* FinanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinanceViewController.h; sourceTree = "<group>"; };
-		1206DA7317BF193E004DC20D /* FinanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinanceViewController.m; sourceTree = "<group>"; };
+		1206DA7217BF193E004DC20D /* Science9ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Science9ViewController.h; sourceTree = "<group>"; };
+		1206DA7317BF193E004DC20D /* Science9ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Science9ViewController.m; sourceTree = "<group>"; };
 		1228734F17CCAEC700F36BEF /* Down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Down.png; sourceTree = "<group>"; };
 		1228735017CCAEC700F36BEF /* Up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Up.png; sourceTree = "<group>"; };
 		1228735317CCB2CA00F36BEF /* 123-id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "123-id-card.png"; sourceTree = "<group>"; };
@@ -337,8 +337,8 @@
 				122873B217CF72E200F36BEF /* FeedbackViewController.m */,
 				1228738C17CD82E200F36BEF /* Transactions */,
 				1228738D17CD82EE00F36BEF /* Home Screen */,
-				1206DA7217BF193E004DC20D /* FinanceViewController.h */,
-				1206DA7317BF193E004DC20D /* FinanceViewController.m */,
+				1206DA7217BF193E004DC20D /* Science9ViewController.h */,
+				1206DA7317BF193E004DC20D /* Science9ViewController.m */,
 				126B470717C75C5C00E3CE12 /* Setup Guide */,
 				1206DA5E17BF193D004DC20D /* Supporting Files */,
 			);
@@ -617,7 +617,7 @@
 				123B6B8717C4B95A00EB7138 /* UIImage+RoundedImage.m in Sources */,
 				1206DA6417BF193D004DC20D /* main.m in Sources */,
 				1206DA6817BF193D004DC20D /* FinanceAppDelegate.m in Sources */,
-				1206DA7417BF193E004DC20D /* FinanceViewController.m in Sources */,
+				1206DA7417BF193E004DC20D /* Science9ViewController.m in Sources */,
 				123B6B8D17C5475500EB7138 /* MainViewController.m in Sources */,
 				126B470A17C75C7B00E3CE12 /* AvatarNameViewController.m in Sources */,
 				126B470D17C75C9800E3CE12 /* AvatarPictureViewController.m in Sources */,

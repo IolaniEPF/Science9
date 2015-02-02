@@ -1,12 +1,12 @@
 //
-//  FinanceViewController.m
-//  Finance
+//  Science 9ViewController.m
+//  Science 9
 //
 //  Created by Blake Tsuzaki on 8/16/13.
 //  Copyright (c) 2013 Blake Tsuzaki. All rights reserved.
 //
 
-#import "FinanceViewController.h"
+#import "Science9ViewController.h"
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlus/GooglePlus.h>
 #import "UIImage+RoundedImage.h"
@@ -14,11 +14,11 @@
 #import "MainViewController.h"
 #import "ClassPeriodViewController.h"
 
-@interface FinanceViewController ()
+@interface Science9ViewController ()
 
 @end
 
-@implementation FinanceViewController
+@implementation Science9ViewController
 
 @synthesize signInButton;
 @synthesize signInActivity;
