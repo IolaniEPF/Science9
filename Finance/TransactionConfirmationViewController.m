@@ -37,7 +37,7 @@ MBProgressHUD *HUD;
                                                         object:nil
                                                       userInfo:nil];
     NSError *error = nil;
-    PFQuery *transactionQuery = [PFQuery queryWithClassName:@"Transactions"];
+    PFQuery *transactionQuery = [PFQuery queryWithClassName:@"StarTransactions"];
     self.transactionObject = [transactionQuery getObjectWithId:[[NSUserDefaults standardUserDefaults] objectForKey:@"sentTransactionID"]error:&error];
     self.navigationItem.hidesBackButton = YES;
     if(error){

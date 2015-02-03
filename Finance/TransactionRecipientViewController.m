@@ -122,7 +122,7 @@ MBProgressHUD *HUD;
     NSError *error = nil;
     NSMutableArray *objects = [[NSMutableArray alloc] init];
     for (int i = 0; i<[[self.avatarTable indexPathsForSelectedRows] count]; i++){
-        PFObject *newTransaction = [[PFObject alloc] initWithClassName:@"Transactions"];
+        PFObject *newTransaction = [[PFObject alloc] initWithClassName:@"StarTransactions"];
         [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionAmount"] forKey:@"Amount"];
         [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionDescription"] forKey:@"Description"];
         [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionType"] forKey:@"TransactionType"];
@@ -170,7 +170,7 @@ MBProgressHUD *HUD;
 }
 - (void)uploadData{
     NSError *error = nil;
-    PFObject *newTransaction = [[PFObject alloc] initWithClassName:@"Transactions"];
+    PFObject *newTransaction = [[PFObject alloc] initWithClassName:@"StarTransactions"];
     [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionAmount"] forKey:@"Amount"];
     [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionDescription"] forKey:@"Description"];
     [newTransaction setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"transactionType"] forKey:@"TransactionType"];

@@ -31,9 +31,9 @@
     
     //Define user object representations for Iolani Bank and Mom and Dad accounts
     
-    PFQuery *senderQuery = [PFQuery queryWithClassName:@"Transactions"];
+    PFQuery *senderQuery = [PFQuery queryWithClassName:@"StarTransactions"];
     [senderQuery whereKey:@"Sender" equalTo:[PFUser currentUser]];
-    PFQuery *recipientQuery = [PFQuery queryWithClassName:@"Transactions"];
+    PFQuery *recipientQuery = [PFQuery queryWithClassName:@"StarTransactions"];
     [recipientQuery whereKey:@"Recipient" equalTo:[PFUser currentUser]];
     
     PFQuery *allTrans = [PFQuery orQueryWithSubqueries:nil];
@@ -51,9 +51,9 @@
             //query for transactions
             if ([PFUser currentUser] != nonStudents[x]) {
             //ensure current user isn't part of nonstudent query to prevent double listing
-                PFQuery *query1 = [PFQuery queryWithClassName:@"Transactions"];
+                PFQuery *query1 = [PFQuery queryWithClassName:@"StarTransactions"];
                 [query1 whereKey:@"Sender" equalTo:[nonStudents objectAtIndex:x]];
-                PFQuery *query2 = [PFQuery queryWithClassName:@"Transactions"];
+                PFQuery *query2 = [PFQuery queryWithClassName:@"StarTransactions"];
                 [query2 whereKey:@"Recipient" equalTo:[nonStudents objectAtIndex:x]];
                 queries = [queries arrayByAddingObject:query1];
                 queries = [queries arrayByAddingObject:query2];
@@ -129,12 +129,12 @@
         cell.amountLabel.text = amountString;
         return cell;
     }else{
-        /*TransactionViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transactionCell" forIndexPath:indexPath];
-        cell.bigLabel.text = @"Money to start off - from Mom and Dad";
-        cell.littleLabel.text = @"Beginning of EPF";
-        cell.amountLabel.textColor = [UIColor greenColor];
-        cell.amountLabel.text = @"+ 35000";
-        return cell;*/
+        TransactionViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transactionCell" forIndexPath:indexPath];
+        cell.bigLabel.text = @"Initial setup";
+        cell.littleLabel.text = @"Beginning of Science 9";
+        cell.amountLabel.textColor = [UIColor grayColor];
+        cell.amountLabel.text = @"★0";
+        return cell;
     }
 }
 
