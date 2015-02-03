@@ -70,7 +70,7 @@ MBProgressHUD *HUD;
     [newUser setObject:@NO forKey:@"superuser"];
     
     PFObject *balances = [[PFObject alloc] initWithClassName:@"Balances"];
-    [balances setObject:[NSNumber numberWithInt:35000] forKey:@"starBalance"];
+    [balances setObject:[NSNumber numberWithInt:0] forKey:@"starBalance"];
     [balances setObject:[NSNumber numberWithInt:0] forKey:@"points"];
     [balances setObject:[newUser objectForKey:@"avatarName"] forKey:@"avatarName"];
     [newUser setObject:balances forKey:@"Balances"];
