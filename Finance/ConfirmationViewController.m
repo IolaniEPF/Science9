@@ -61,7 +61,7 @@ MBProgressHUD *HUD;
 - (void)signUpForParse{
     HUD.labelText = @"Signing in";
     PFUser *newUser = [PFUser user];
-    newUser.email = [GPPSignIn sharedInstance].authentication.userEmail;
+    newUser.username = newUser.email = [GPPSignIn sharedInstance].authentication.userEmail;
     newUser.password = @"iolani63";
     
     [newUser setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"avatarName"] forKey:@"avatarName"];
