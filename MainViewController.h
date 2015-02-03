@@ -23,6 +23,7 @@
 @property (retain, nonatomic) IBOutlet BadgeView *badgeView;
 @property (retain, nonatomic) IBOutlet UIView *headerView;
 @property (retain, nonatomic) IBOutlet UILabel *nameLabel;
++ (void)verifyCurrentAppVersion;
 
 
 @end

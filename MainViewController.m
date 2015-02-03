@@ -68,6 +68,30 @@ MBProgressHUD *HUD;
     }
 }
 
++ (void)verifyCurrentAppVersion {
+    NSString *currentVer = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
+        if(!error && ![config[@"currentTFVer"] isEqual:nil])  {
+            NSString *appVer = config[@"currentTFVer"];
+            NSString *releaseNotes = config[@"releaseNotes"];
+            NSLog(@"Fetched latest version info %@", appVer);
+            if(![currentVer isEqualToString:appVer]) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App update required!" message:[NSString stringWithFormat:@"Your Poing installation is out of date.  Please download the latest version (%@) from TestFlight.  You are running version %@.  Notes: %@", appVer, currentVer, releaseNotes] delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+                NSLog(@"App is out of date.  Version %@ reported, currently running version %@.", appVer, currentVer);
+                [alert show];
+            } else {
+                NSLog(@"App install is up to date.");
+            }
+        }
+        else {
+            // currentVer was not retrieved, handle
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to connect to the Internet!" message:@"Please connect to the Internet to get the latest schedule updates." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            NSLog(@"Error retrieving current app version, running version %@.", currentVer);
+            [alert show];
+        }
+    }];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     Sci9WebViewController *webViewController = segue.destinationViewController;
     
