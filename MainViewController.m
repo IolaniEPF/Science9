@@ -204,7 +204,7 @@ MBProgressHUD *HUD;
 }
 - (void)refreshUserData{
     
-    [[PFUser currentUser] refresh];
+    [[PFUser currentUser] fetch];
     
     HUD.labelText = @"Updating transactions";
     
