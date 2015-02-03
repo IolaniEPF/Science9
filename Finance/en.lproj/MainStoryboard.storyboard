@@ -1039,23 +1039,23 @@
                             <constraint firstAttribute="trailing" secondItem="nLo-ie-wag" secondAttribute="trailing" constant="12" id="0Ad-oz-yg6"/>
                             <constraint firstItem="QTA-vL-fgS" firstAttribute="top" secondItem="06P-dZ-AS0" secondAttribute="top" constant="20" symbolic="YES" id="1Wd-Qz-aPX"/>
                             <constraint firstItem="cxH-5O-idE" firstAttribute="top" secondItem="QTA-vL-fgS" secondAttribute="bottom" constant="8" symbolic="YES" id="380-D9-a8X"/>
+                            <constraint firstItem="Boc-3I-XzD" firstAttribute="top" secondItem="nLo-ie-wag" secondAttribute="top" id="3W9-nH-oOJ"/>
                             <constraint firstItem="p41-qW-j2m" firstAttribute="leading" secondItem="06P-dZ-AS0" secondAttribute="leading" constant="20" symbolic="YES" id="7TB-GS-0MQ"/>
                             <constraint firstItem="QTA-vL-fgS" firstAttribute="leading" secondItem="s6a-aQ-10D" secondAttribute="trailing" constant="8" symbolic="YES" id="88O-Ap-D02"/>
                             <constraint firstItem="cxH-5O-idE" firstAttribute="leading" secondItem="p41-qW-j2m" secondAttribute="trailing" constant="8" symbolic="YES" id="Bw9-Ka-uOb"/>
                             <constraint firstAttribute="bottom" secondItem="p41-qW-j2m" secondAttribute="bottom" constant="20" symbolic="YES" id="Dj2-3G-rGr"/>
+                            <constraint firstItem="Boc-3I-XzD" firstAttribute="leading" secondItem="06P-dZ-AS0" secondAttribute="leadingMargin" constant="-9" id="EoR-Hv-96z"/>
                             <constraint firstItem="s6a-aQ-10D" firstAttribute="baseline" secondItem="QTA-vL-fgS" secondAttribute="baseline" id="G4O-6W-4el"/>
                             <constraint firstItem="s6a-aQ-10D" firstAttribute="leading" secondItem="p41-qW-j2m" secondAttribute="leading" id="Hcs-qA-WT1"/>
-                            <constraint firstItem="Boc-3I-XzD" firstAttribute="leading" secondItem="06P-dZ-AS0" secondAttribute="leading" constant="11" id="Mg5-qE-89o"/>
                             <constraint firstItem="nLo-ie-wag" firstAttribute="top" secondItem="fsK-EB-MVT" secondAttribute="bottom" constant="8" symbolic="YES" id="NtZ-Ff-oeL"/>
                             <constraint firstItem="QTA-vL-fgS" firstAttribute="trailing" secondItem="cxH-5O-idE" secondAttribute="trailing" id="Pi0-LL-F7s"/>
                             <constraint firstItem="s6a-aQ-10D" firstAttribute="top" secondItem="QTA-vL-fgS" secondAttribute="top" id="Six-4p-T5n"/>
                             <constraint firstAttribute="trailing" secondItem="cxH-5O-idE" secondAttribute="trailing" constant="20" symbolic="YES" id="VUa-HR-w9g"/>
                             <constraint firstItem="p41-qW-j2m" firstAttribute="top" secondItem="s6a-aQ-10D" secondAttribute="bottom" constant="8" symbolic="YES" id="VfW-qJ-F8h"/>
+                            <constraint firstItem="8EX-6m-RI5" firstAttribute="top" secondItem="Boc-3I-XzD" secondAttribute="bottom" constant="8" symbolic="YES" id="aOH-Hk-87v"/>
                             <constraint firstItem="QTA-vL-fgS" firstAttribute="leading" secondItem="cxH-5O-idE" secondAttribute="leading" id="elt-4Y-UXb"/>
                             <constraint firstAttribute="bottom" secondItem="cxH-5O-idE" secondAttribute="bottom" constant="20" symbolic="YES" id="hJh-N5-vrH"/>
-                            <constraint firstItem="Boc-3I-XzD" firstAttribute="top" secondItem="nLo-ie-wag" secondAttribute="top" id="jeh-Vd-CIa"/>
                             <constraint firstItem="fsK-EB-MVT" firstAttribute="trailing" secondItem="06P-dZ-AS0" secondAttribute="trailing" id="kCO-7m-Fgh"/>
-                            <constraint firstItem="8EX-6m-RI5" firstAttribute="top" secondItem="Boc-3I-XzD" secondAttribute="bottom" constant="20" symbolic="YES" id="xGo-vA-IfF"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Transactions" image="192-credit-card.png" id="sLc-yx-qGi"/>
@@ -1066,6 +1066,7 @@
                         <outlet property="XPView" destination="cxH-5O-idE" id="ZfT-DP-Fwg"/>
                         <outlet property="badgeButton" destination="fsK-EB-MVT" id="GUU-8E-AIH"/>
                         <outlet property="balanceLabel" destination="s6a-aQ-10D" id="bU5-hi-bwp"/>
+                        <outlet property="starButton" destination="Boc-3I-XzD" id="mkA-GZ-6xD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCX-Xw-gbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1084,11 +1085,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Raider Bank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btA-C3-YME">
-                                <rect key="frame" x="-6" y="19" width="551" height="167"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Point Dispatch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btA-C3-YME">
+                                <rect key="frame" x="-20" y="19" width="579" height="167"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="167" id="77d-FQ-qHZ"/>
-                                    <constraint firstAttribute="width" constant="551" id="n34-hv-7UA"/>
+                                    <constraint firstAttribute="width" constant="579" id="n34-hv-7UA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="85"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -1980,7 +1981,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3R-TN-xF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2947" y="-690"/>
+            <point key="canvasLocation" x="2567" y="1116"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="pg9-Ev-XRO">

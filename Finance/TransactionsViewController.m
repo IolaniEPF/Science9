@@ -40,9 +40,11 @@
     if([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]){
         [self.XPButton setHidden:NO];
         [self.badgeButton setHidden:NO];
+        [self.starButton setHidden:NO];
     }else{
         [self.XPButton setHidden:YES];
         [self.badgeButton setHidden:YES];
+        [self.starButton setHidden:YES];
     }
     NSNumberFormatter *formatter = [[[NSNumberFormatter alloc] init] autorelease];
     formatter.numberStyle = kCFNumberFormatterDecimalStyle;
@@ -65,9 +67,11 @@
     if([[[PFUser currentUser] objectForKey:@"superuser"] isEqual:@YES]){
         [self.XPButton setHidden:NO];
         [self.badgeButton setHidden:NO];
+        [self.starButton setHidden:NO];
     }else{
         [self.XPButton setHidden:YES];
         [self.badgeButton setHidden:YES];
+        [self.starButton setHidden:YES];
     }
     [[[PFUser currentUser] objectForKey:@"Balances"] fetch];
     
@@ -90,6 +94,7 @@
     [_XPButton release];
     [_balanceLabel release];
     [_XPLabel release];
+    [_starButton release];
     [super dealloc];
 }
 @end

@@ -16,6 +16,7 @@
 @property (retain, nonatomic) IBOutlet XPPointsView *CashView;
 @property (retain, nonatomic) IBOutlet UIButton *badgeButton;
 @property (retain, nonatomic) IBOutlet UIButton *XPButton;
+@property (retain, nonatomic) IBOutlet UIButton *starButton;
 @property (retain, nonatomic) IBOutlet UICountingLabel *balanceLabel;
 @property (retain, nonatomic) IBOutlet UICountingLabel *XPLabel;
 
