@@ -129,12 +129,12 @@
         cell.amountLabel.text = amountString;
         return cell;
     }else{
-        TransactionViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transactionCell" forIndexPath:indexPath];
+        /*TransactionViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transactionCell" forIndexPath:indexPath];
         cell.bigLabel.text = @"Money to start off - from Mom and Dad";
         cell.littleLabel.text = @"Beginning of EPF";
         cell.amountLabel.textColor = [UIColor greenColor];
         cell.amountLabel.text = @"+ 35000";
-        return cell;
+        return cell;*/
     }
 }
 
