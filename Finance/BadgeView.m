@@ -37,6 +37,7 @@
     PFQuery *everyoneQuery = [PFQuery queryWithClassName:@"Badges"];
     [everyoneQuery whereKey:@"forEveryone" equalTo:@YES];
     PFQuery *allQuery = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:badgeQuery,everyoneQuery, nil]];
+    [allQuery orderByAscending:@"updatedAt"];
     self.badges = [allQuery findObjects:&error];
     if(error){
         NSString *errorString = [error localizedDescription];
