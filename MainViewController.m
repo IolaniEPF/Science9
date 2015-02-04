@@ -62,8 +62,8 @@ MBProgressHUD *HUD;
     PFQuery *newsQuery = [[PFQuery alloc] initWithClassName:@"NewStory"];
     [newsQuery orderByAscending:@"createdAt"];
     PFObject *newsObject = [newsQuery getFirstObject];
-    if ((newsObject != nil) && ![[newsObject objectForKey:@"Story"]isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"newsStory"]]){
-        [[NSUserDefaults standardUserDefaults] setObject:[newsObject objectForKey:@"Story"] forKey:@"newsStory"];
+    if ((newsObject != nil) && ![[newsObject objectForKey:@"story"]isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"newsStory"]]){
+        [[NSUserDefaults standardUserDefaults] setObject:[newsObject objectForKey:@"story"] forKey:@"newsStory"];
         [self performSegueWithIdentifier:@"newsSegue" sender:self];
     }
 }

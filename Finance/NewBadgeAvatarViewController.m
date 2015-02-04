@@ -93,13 +93,13 @@ MBProgressHUD *HUD;
 }
 - (void)uploadData{
     NSError *error = nil;
-    PFFile *badgeImage = [PFFile fileWithName:[NSString stringWithFormat:@"%@.png",[[NSUserDefaults standardUserDefaults] objectForKey:@"BadgeName"]] data:[[NSUserDefaults standardUserDefaults] objectForKey:@"badgeImage"]];
+    PFFile *badgeImage = [PFFile fileWithName:[NSString stringWithFormat:@"%@.png",[[NSUserDefaults standardUserDefaults] objectForKey:@"badgeName"]] data:[[NSUserDefaults standardUserDefaults] objectForKey:@"badgeImage"]];
     [badgeImage save:&error];
     PFObject *newBadge = [[PFObject alloc] initWithClassName:@"Badges"];
-    [newBadge setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"BadgeName"] forKey:@"BadgeName"];
-    [newBadge setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"BadgeDescription"] forKey:@"BadgeDescription"];
-    [newBadge setObject:@NO forKey:@"Everyone"];
-    [newBadge setObject:self.selectedUsers forKey:@"Recipients"];
+    [newBadge setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"badgeName"] forKey:@"badgeName"];
+    [newBadge setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"badgeDescription"] forKey:@"badgeDescription"];
+    [newBadge setObject:@NO forKey:@"forEveryone"];
+    [newBadge setObject:self.selectedUsers forKey:@"recipients"];
     [newBadge setObject:badgeImage forKey:@"imageFile"];
     [newBadge save:&error];
     if(error){

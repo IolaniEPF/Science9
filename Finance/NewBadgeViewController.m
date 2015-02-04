@@ -59,8 +59,8 @@
 }
 
 - (void)saveTransactionData{
-    [[NSUserDefaults standardUserDefaults] setObject:self.badgeName.text forKey:@"BadgeName"];
-    [[NSUserDefaults standardUserDefaults] setObject:self.badgeDescription.text forKey:@"BadgeDescription"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.badgeName.text forKey:@"badgeName"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.badgeDescription.text forKey:@"badgeDescription"];
     [self transitionToNext];
 }
 

@@ -33,9 +33,9 @@
                                                  name:@"ReloadBadges"
                                                object:nil];
     PFQuery *badgeQuery = [PFQuery queryWithClassName:@"Badges"];
-    [badgeQuery whereKey:@"Recipients" containsAllObjectsInArray:[NSArray arrayWithObject:[PFUser currentUser]]];
+    [badgeQuery whereKey:@"recipients" containsAllObjectsInArray:[NSArray arrayWithObject:[PFUser currentUser]]];
     PFQuery *everyoneQuery = [PFQuery queryWithClassName:@"Badges"];
-    [everyoneQuery whereKey:@"Everyone" equalTo:@YES];
+    [everyoneQuery whereKey:@"forEveryone" equalTo:@YES];
     PFQuery *allQuery = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:badgeQuery,everyoneQuery, nil]];
     self.badges = [allQuery findObjects:&error];
     if(error){
@@ -60,16 +60,16 @@
     BadgeViewCell *cell = [self dequeueReusableCellWithReuseIdentifier:@"badgeCell" forIndexPath:indexPath];
     PFFile *badgeImage = [[self.badges objectAtIndex:indexPath.row] objectForKey:@"imageFile"];
     cell.badgeImageView.image = [UIImage roundedImageWithImage:[UIImage imageWithData:[badgeImage getData]]];
-    cell.badgeLabel.text = [[self.badges objectAtIndex:indexPath.row] objectForKey:@"BadgeName"];
+    cell.badgeLabel.text = [[self.badges objectAtIndex:indexPath.row] objectForKey:@"badgeName"];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     BadgeViewController *detailController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"badgeView"];
     UIPopoverController *badgePop = [[UIPopoverController alloc] initWithContentViewController:detailController];
-    detailController.badgeTitle.text = [[_badges objectAtIndex:indexPath.row] objectForKey:@"BadgeName"];
+    detailController.badgeTitle.text = [[_badges objectAtIndex:indexPath.row] objectForKey:@"badgeName"];
     [detailController.badgeDescription setFont:[UIFont fontWithName:@"Avenir Next Condensed" size:17.0]];
-    detailController.badgeDescription.text = [[_badges objectAtIndex:indexPath.row] objectForKey:@"BadgeDescription"];
+    detailController.badgeDescription.text = [[_badges objectAtIndex:indexPath.row] objectForKey:@"badgeDescription"];
     [badgePop.contentViewController.view bringSubviewToFront:detailController.badgeTitle];
     CGRect frame = [collectionView convertRect:[collectionView cellForItemAtIndexPath:indexPath].frame toView:self];
     [badgePop presentPopoverFromRect:CGRectMake(frame.origin.x-85, frame.origin.y-190, 300, 300) inView:self permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
